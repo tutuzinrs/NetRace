@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useSpeedTestStore } from '../store/speedTestStore';
 import { RocketCanvas } from './RocketCanvas';
 import { SpeedDisplay } from './SpeedDisplay';

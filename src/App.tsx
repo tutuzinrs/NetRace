@@ -1,4 +1,3 @@
-import React from 'react';
 import { Header } from './components/Header';
 import { SpeedTest } from './components/SpeedTest';
 import { Results } from './components/Results';

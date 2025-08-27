@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
       <div className="container">
         <div className="logo">
           <h1>🚀 NetRace</h1>
-          <span>Teste de Velocidade Gamificado</span>
+          <span>Teste de Velocidade Gamificado Mais Preciso Do Brasil</span>
         </div>
         
         <nav className="nav">

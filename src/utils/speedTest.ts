@@ -203,7 +203,7 @@ export const getSpeedScenarios = (download: number, upload: number, ping: number
 };
 
 // Função para gerar feedback criativo
-export const getCreativeFeedback = (download: number, upload: number, ping: number) => {
+export const getCreativeFeedback = (download: number, ping: number) => {
   if (download >= 100 && ping < 20) {
     return {
       title: 'Velocidade Supersônica! 🚀',
