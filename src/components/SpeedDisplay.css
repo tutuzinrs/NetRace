@@ -1,0 +1,94 @@
+.speed-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.speed-item {
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.speed-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.speed-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.speed-item:hover::before {
+  opacity: 1;
+}
+
+.speed-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.speed-value {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+  transition: var(--transition);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.speed-value.testing {
+  animation: speed-pulse 1.5s infinite ease-in-out;
+}
+
+.speed-unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@keyframes speed-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    color: var(--primary);
+  }
+  50% { 
+    transform: scale(1.05);
+    color: var(--secondary);
+  }
+}
+
+@media (max-width: 768px) {
+  .speed-display {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .speed-value {
+    font-size: 1.75rem;
+  }
+}
