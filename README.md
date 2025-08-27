@@ -37,6 +37,24 @@ npm install
 
 # Execute em desenvolvimento
 npm run dev
+```
+
+### Servidor Proxy (para Fast.com API)
+```bash
+# Em um terminal separado
+cd fastcom-proxy
+npm install
+node server.js
+# Servidor rodando em: http://localhost:4000
+```
+
+**⚠️ Importante**: Para usar o teste "Fast.com Oficial", você precisa rodar o servidor proxy em `localhost:4000` para resolver problemas de CORS.
+
+### 🔧 Endpoints do Proxy:
+- `GET /health` - Status do servidor
+- `GET /fastcom-config` - Configuração Fast.com (com fallback)
+- `GET /speed-test?url=URL` - Teste de velocidade via proxy
+- `GET /proxy?url=URL` - Proxy genérico para qualquer URL
 
 # Build para produção
 npm run build
