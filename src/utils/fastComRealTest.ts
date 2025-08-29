@@ -94,7 +94,7 @@ export const performFastComRealTest = async (): Promise<void> => {
       token: FAST_COM_TOKEN
     });
     
-    // Reset test on error
+    // Reinicia teste em caso de erro
     resetTest();
     
     // Mostra erro amigável para o usuário
@@ -176,9 +176,9 @@ const measureNetflixPing = async (targets: FastComTarget[]): Promise<number> => 
     }
   });
   
-  // Executa pings em paralelo
-  const results = await Promise.all(pingPromises);
-  const validPings = results.filter(ping => ping !== null) as number[];
+    // Executa pings em paralelo
+    const results = await Promise.all(pingPromises);
+    const validPings = results.filter(ping => ping !== null) as number[];
   
   if (validPings.length === 0) {
     console.log(`📡 Todos os pings falharam - tentando fallback...`);
